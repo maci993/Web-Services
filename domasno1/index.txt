@@ -1,0 +1,60 @@
+### Questions
+
+1. Што е mongoose?
+- Mongoose e baziran na objektno modeliranje na podatocite(Object Data Modeling-ODM) i e biblioteka za MongoDB.
+
+2. Како се филтрираат податоците во MongoDB, а како во mongoose?
+- Vo MongoDB podatocite se filtriraat so koristenje na query objekt { $filter: { name: "Maria"}}; ,
+ a vo Mongoose prviot parametar e modelot, pa potoa funkcijata find() (Library.find({}));
+
+3. Дали во mongoose имаме валидација на полињата?
+- Mongoose ima nekolku built-in validatori: site Shema tipovi imaat built-in validator koj e neophoden i mora da se definira,
+broevite imaat min i max validatori, i stringovite imaat match, minLength i maxLength validatori.
+
+4. Од што се состои Mongo конекциски стринг?
+- Mongo konekciskiot string se sostoi od protocol, potoa korisnicko ime i password (username:password@), host[:port]-> host i
+ opcionalen broj na porta kade sto mongodb instancata ke se startuva, potoa ime na bazata (/Semos?) i query string.
+
+### Modules
+ - Modul e reusable del od kodot koj go pravi funkcionalen. Modulite go pravat kodot cist, organiziran i lesen za razbiranje.
+1. Core
+
+- Built-in moduli koji se spakuvani so Node.js.
+*http (HTTP server/client)
+*Path (file path manipulation)
+*fs (file system)
+*util (utilities)
+
+2. Local
+
+- Se kreirani lokalno vo nasata Node.js aplikacija. Na primer nekoj modul sto go kreirame za upravuvanje so DB, korisnicka avtentifikacija i istiot go eksportirame so module.exports.
+
+3. Third party
+
+- Se kreirani od drugi developeri i dostapni se preku Node Package Manager(npm).
+(express, MongoDb, axios)
+
+
+### Web
+
+1.MVC architecture
+- Model-View-Controller e popularen sofvtverski dizajn koj sto ja razdeluva nasata aplikacija na tri komponenti koi se megjusebno povrzani.
+Model- data i logika na aolikacijata. View- pretstavuva userinterface na aplikacijata. Controller- medijator pomegju model i view. 
+Prima podatoci od user-ot preku view, pravi interakcija so modelot i manpipulira so podatocite i istite gi update-ira vo view. 
+
+2.Client server architecture
+- Ovaa arhitektura odgovara na sistem koj hostira, dostavuva i menadzira so resursite i baranjata koi doagjaat od klientot.
+Vo ovoj model site baranja i servisi se dostavuvaat preku internet, odnosno baranjata od klientite preku internetot doagjaat do serverot,
+serverot odgovara na baranjata i vrakja odgovor do klientot. 
+
+3.HTTP/HTTPs
+-HTTP- Hypertext Transfer Protocol- protokol za prezentiranje na informacii preku mreza(internet).
+HTTPs- s-to oznacuva "secure", gi zastituva HTTP baranjata i odgovorite.
+
+4.Status codes
+ 1xx - Informational - Client can proceed to send the request body
+ 2xx - Success -  the request was successfully received, understood, and accepted
+ 3xx - Redirection - further action needs to be taken in order to complete the request
+ 4xx client error – the request
+ 4xx - Client error -  the request contains bad syntax or cannot be fulfilled
+ 5xx - Server error - the server failed to fulfil an apparently valid request.
