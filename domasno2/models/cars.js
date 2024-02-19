@@ -29,11 +29,11 @@ const getAll = async () => {
 };
 
 const update = async (year, data) => {
-  return await Car.updateOne({ _year: year }, data);
+  return await Car.updateOne({ _id: id }, data);
 };
 
 const remove = async (year) => {
-  return await Car.deleteOne({ _year: year });
+  return await Car.deleteOne({ _id: id });
 };
 
 module.exports = {
