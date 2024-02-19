@@ -49,8 +49,8 @@ const createCar = async (req, res) => {
 
 const updateCar = async (req, res) => {
   try {
-    await update(req.params.year, req.body);
-    res.status(204).send(`Car updated: ${req.params.year}`);
+    await update(req.params.id, req.body);
+    res.status(204).send(`Car updated: ${req.params.id}`);
   } catch (err) {
     console.log(err);
     res.status(500).send("Internal Server Error!");
@@ -59,8 +59,8 @@ const updateCar = async (req, res) => {
 
 const removeCar = async (req, res) => {
   try {
-    await remove(req.params.year);
-    res.status(204).send(`Car deleted: ${req.params.year}`);
+    await remove(req.params.id);
+    res.status(204).send(`Car deleted: ${req.params.id}`);
   } catch (err) {
     console.log(err);
     res.status(500).send("Internal Server Error!");
