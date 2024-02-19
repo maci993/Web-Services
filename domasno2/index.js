@@ -19,8 +19,8 @@ app.get("/cars", getAllCars);
 app.get("/cars/sorted", getAllSorted);
 app.get("/cars/:year", getCarsByYear);
 app.post("/cars", createCar);
-app.put("/cars/:year", updateCar);
-app.delete("/cars/:year", removeCar);
+app.put("/cars/:id", updateCar);
+app.delete("/cars/:id", removeCar);
 
 const port = 3000;
 
