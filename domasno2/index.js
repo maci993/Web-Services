@@ -3,7 +3,7 @@ const express = require("express");
 const {
     getAllCars,
     getAllSorted,
-    getCarsByYear,
+    getCarsById,
     createCar,
     updateCar,
     removeCar,
@@ -17,7 +17,7 @@ const app = express();
 
 app.get("/cars", getAllCars);
 app.get("/cars/sorted", getAllSorted);
-app.get("/cars/:year", getCarsByYear);
+app.get("/cars/:year", getCarsById);
 app.post("/cars", createCar);
 app.put("/cars/:id", updateCar);
 app.delete("/cars/:id", removeCar);
