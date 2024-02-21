@@ -26,7 +26,7 @@ const create = async (data) => {
 };
 
 const getByYear = async (year) => {
-  return await Car.findOne({ _year: year });
+  return await Car.findOne({ _id: id });
 };
 
 const getAllSortedByName = async () => {
