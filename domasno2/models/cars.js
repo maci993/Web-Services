@@ -37,7 +37,7 @@ const getAll = async () => {
   return await Car.find({});
 };
 
-const update = async (year, data) => {
+const update = async (id, data) => {
   return await Car.updateOne({ _id: id }, data);
 };
 
