@@ -25,7 +25,7 @@ const create = async (data) => {
   return await car.save();
 };
 
-const getByYear = async (year) => {
+const getById = async (year) => {
   return await Car.findOne({ _id: id });
 };
 
@@ -47,7 +47,7 @@ const remove = async (id) => {
 
 module.exports = {
   create,
-  getByYear,
+  getById,
   getAllSortedByName,
   getAll,
   update,
