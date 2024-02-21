@@ -7,6 +7,15 @@ const carShema = mongoose.Schema({
   color: String,
   mileage: Number,
   price: Number,
+  createdAT: {
+    immutable: true,
+    type: Date,
+    default: () => Date.now()
+},
+updatedAT: {
+    type: Date,
+    default: () => Date.now()
+}
 });
 
 const Car = mongoose.model("Semos", carShema, "cars");
