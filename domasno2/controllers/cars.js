@@ -1,6 +1,6 @@
 const {
   create,
-  getByYear,
+  getById,
   getAllSortedByName,
   getAll,
   update,
@@ -27,9 +27,9 @@ const getAllSorted = async (req, res) => {
   }
 };
 
-const getCarsByYear = async (req, res) => {
+const getCarsById = async (req, res) => {
   try {
-    const car = await getByYear(req.params.year);
+    const car = await getById(req.params.id);
     res.status(200).send(car);
   } catch (err) {
     console.log(err);
@@ -70,7 +70,7 @@ const removeCar = async (req, res) => {
 module.exports = {
   getAllCars,
   getAllSorted,
-  getCarsByYear,
+  getCarsById,
   createCar,
   updateCar,
   removeCar,
