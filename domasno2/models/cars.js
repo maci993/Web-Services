@@ -41,7 +41,7 @@ const update = async (id, data) => {
   return await Car.updateOne({ _id: id }, data);
 };
 
-const remove = async (year) => {
+const remove = async (id) => {
   return await Car.deleteOne({ _id: id });
 };
 
