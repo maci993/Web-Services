@@ -7,6 +7,15 @@ const accountSchema = mongoose.Schema({
   fullName: String,
   oldPassword: String,
   newPassword: String,
+  unsuccessfulLogin: {
+    type: Number,
+  default: 0,
+},
+  succesfullLogin: {
+     type: Number,
+    default: 0,
+  },
+
   // wrongPass: Number,
   // succesfullLogin: Number,
 });
@@ -42,6 +51,14 @@ const remove = async (id) => {
   return await Account.deleteOne({ _id: id });
 };
 
+const successfullLogin = async (email) => {
+  await Account.updateOne({email}, { $inc: { successedAttempts: 1 } });
+};
+
+const unsuccessfulLogin = async (email) => {
+  await Account.updateOne({ email }, { $inc: { failedAttempts: 1 } });
+};
+
 // const updateWrongPass = async (_id, wrongPass) => {
 //   return await Account.updateOne({_id}, wrongPass);
 // };
@@ -58,6 +75,8 @@ module.exports = {
   getAll,
   update,
   remove,
+  successfullLogin,
+  unsuccessfulLogin,
   // updateWrongPass,
   // updateLogin,
 };
