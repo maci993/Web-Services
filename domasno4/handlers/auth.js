@@ -7,7 +7,7 @@ const {
   updateLogin,
   updateWrongPass,
   setNewPassword,
-   successfullLogin,
+  successfullLogin,
   unsuccessfulLogin,
 } = require("../pkg/account");
 
