@@ -7,6 +7,8 @@ const {
   updateLogin,
   updateWrongPass,
   setNewPassword,
+   successfullLogin,
+  unsuccessfulLogin,
 } = require("../pkg/account");
 
 const {
@@ -27,6 +29,7 @@ const login = async (req, res) => {
       return res.status(400).send("Account not found!");
     }
     if (!bcrypt.compareSync(password, account.password)) {
+      await unsuccessfulLogin(email);
       // let wrongPass = account.wrongPass;
       // await updateWrongPass(account._id, wrongPass++);
       // await registerFailedLogin();
@@ -45,11 +48,13 @@ const login = async (req, res) => {
     };
 
     const token = jwt.sign(payload, getSection("development").jwt_secret);
-    // if (token) {
+    if (token) {
+          await successfullLogin(email);
+    return res.status(200).send({ token });
+  } 
     // let succesfullLogin = account.succesfullLogin
     // await updateLogin(account._id, succesfullLogin++);
     // }
-    return res.status(200).send({ token });
   } catch (err) {
     res.status(500).send("Internal Server Error");
   }
