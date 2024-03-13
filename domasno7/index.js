@@ -8,7 +8,7 @@ app.get("/api/weather/:city", getForCity);
 app.get("api/weather/hourly/:city", getForCityHourly);
 app.get("api/weather/daily/:city", getCityWeatherByDay);
 
-app.get("/api/rick_and_morty/character", getCharacterRickAndMorty);
+app.get("/api/rick_and_morty/character/:id", getCharacterRickAndMorty);
 
 // server startup
 app.listen(8000, (err) => {
