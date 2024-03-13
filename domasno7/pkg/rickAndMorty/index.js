@@ -18,7 +18,7 @@ const getCharacter = async (character) => {
 
   const URL = `${
     getSection("rick_and_morty").API_URL_CHARACTERS
-  }/character`;
+  }`;
 
   try {
     const res = await fetch(URL);
